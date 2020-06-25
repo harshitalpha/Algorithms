@@ -16,7 +16,7 @@ def solve(arr,start,end,coin):
     if (coin < 0):
         return 0
     else:
-        if (end,coin) in dp.keys():
+        if (end,coin) in dp:
             return dp[(end,coin)]
         else:
             x =  solve(arr, start, end-1, coin) + solve(arr, start, end, coin - arr[end])
@@ -46,3 +46,5 @@ ans = solve(arr,0,len(arr)-1,coin)
 print(ans)
 ans = solve_bottum_up(arr, coin)
 print(ans)
+
+
